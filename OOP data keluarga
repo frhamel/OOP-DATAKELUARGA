@@ -1,0 +1,61 @@
+using System;
+public class HelloWorld
+{
+    static public void Main ()
+    {
+     familyhobi ak = new familyhobi();
+     familyhobi ayah = new Ayah();
+     familyhobi anak = new Anak();
+     familyhobi adek = new Adek();
+     
+     familydata ayahku = new familydata("Wanuriyanto",39,083833496424);
+    familydata anakku = new familydata("Farah Nur Amelia",16,083833496424);
+    familydata adeku = new familydata("Fahmi",7,083833722201);
+     Console.WriteLine("DATA AYAH:\n"+ayahku.nama+"\n"+ayahku.umur+"\n"+ayahku.nohp);
+     ayah.Hobi();
+   Console.WriteLine("DATA ANAK:\n"+anakku.nama+"\n"+anakku.umur+"\n"+anakku.nohp);
+     anak.Hobi();
+     Console.WriteLine("DATA ADEK:\n"+adeku.nama+"\n"+adeku.umur+"\n"+adeku.nohp);
+     adek.Hobi();
+    }
+    class familydata
+    {
+        public string nama;
+        public int umur;
+        public long nohp;
+        public familydata(string Nama,int Umur,long Nohp)
+        {
+            nama = Nama;
+            umur = Umur;
+            nohp = Nohp;
+        }
+    }
+    class familyhobi 
+    {
+        public virtual void Hobi()
+        {
+            Console.WriteLine("Hobi");
+        }
+    }
+    class Ayah:familyhobi
+    {
+        public override void Hobi()
+        {
+            Console.WriteLine("Nonton");
+        }
+    }
+    class Anak:familyhobi
+    {
+        public override void Hobi()
+        {
+            Console.WriteLine("Menonton");
+        }
+    }
+    class Adek:familyhobi
+    {
+        public override void Hobi()
+        {
+            Console.WriteLine("main");
+        }
+    }
+}
